@@ -26,13 +26,13 @@ function App() {
     setError("");
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/email/generate",
+        "https://emailaiwriter-production.up.railway.app/api/email/generate",
         {
           emailContent,
           tone,
         }
       );
-      //additional check to convert response to string if orignial data is not in string format
+      //additional check to convert response to string if orignial data is not in string the format
       setGeneratedReply(
         typeof response.data === "string"
           ? response.data
